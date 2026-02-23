@@ -86,13 +86,17 @@ func (c *Client) listPRComment(ctx context.Context, pr *PullRequest) ([]*IssueCo
 }
 
 func (c *Client) ListComments(ctx context.Context, pr *PullRequest) ([]*IssueComment, error) {
+	all := []*IssueComment{}
 	cmts, prErr := c.listPRComment(ctx, pr)
 	if prErr == nil {
-		return cmts, nil
+		all = append(all, cmts...)
 	}
 	cmts, err := c.listIssueComment(ctx, pr)
 	if err == nil {
-		return cmts, nil
+		all = append(all, cmts...)
 	}
-	return nil, fmt.Errorf("get pull request or issue comments: %w, %w", prErr, err)
+	if len(all) == 0 {
+		return nil, fmt.Errorf("get pull request or issue comments: %w, %w", prErr, err)
+	}
+	return all, nil
 }

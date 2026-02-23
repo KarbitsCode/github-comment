@@ -235,8 +235,8 @@ func isExcludedComment(cmt *github.IssueComment, login string) bool {
 	}
 	// GitHub Actions's GITHUB_TOKEN secret doesn't have a permission to get an authenticated user.
 	// So if `login` is empty, we give up filtering comments by login.
-	if login != "" && cmt.Author.Login != login {
-		return true
-	}
+	// if login != "" && cmt.Author.Login != login {
+	// 	return true
+	// }
 	return false
 }
