@@ -8,9 +8,9 @@ on:
         required: true
 jobs:
   test:
-    uses: suzuki-shunsuke/go-test-full-workflow/.github/workflows/test.yaml@98ab396ba72f7b47f7e22aca7346b6e1d7ae4deb # v6.0.0
+    uses: suzuki-shunsuke/go-test-full-workflow/.github/workflows/test.yaml@6e3ab6f9508fec552b5890e7710d6cdef4489d22 # v6.0.1
     with:
-      aqua_version: v2.62.1
+      aqua_version: v2.62.2
       golangci-lint-timeout: 120s
     secrets:
       TAKUMI_GUARD_BOT_ID: ${{secrets.TAKUMI_GUARD_BOT_ID}}
@@ -27,13 +27,13 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6.5.0
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
         with:
           go-version-file: go.mod
 
       - uses: aquaproj/aqua-installer@96a9bc20066c5bf5e275b41019cfc165b25f4e2e # v4.0.5
         with:
-          aqua_version: v2.62.1
+          aqua_version: v2.62.2
 
       - name: dry run
         run: bash scripts/test-dry-run.sh
