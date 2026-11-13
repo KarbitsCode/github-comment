@@ -1,11 +1,11 @@
 module github.com/suzuki-shunsuke/github-comment/v6
 
-go 1.27.2
+go 1.27.4
 
 require (
 	github.com/Masterminds/sprig/v3 v3.3.0
 	github.com/expr-lang/expr v1.17.8
-	github.com/google/go-github/v92 v92.0.0
+	github.com/google/go-github/v93 v93.0.0
 	github.com/invopop/jsonschema v0.14.0
 	github.com/mattn/go-colorable v0.1.16
 	github.com/shurcooL/githubv4 v0.0.0-20240429030203-be2daab69064
@@ -19,8 +19,8 @@ require (
 	github.com/suzuki-shunsuke/slog-util v0.3.2
 	github.com/suzuki-shunsuke/urfave-cli-v3-util v0.2.4
 	github.com/urfave/cli/v3 v3.14.0
-	golang.org/x/oauth2 v0.37.0
-	golang.org/x/term v0.46.0
+	golang.org/x/oauth2 v0.38.0
+	golang.org/x/term v0.48.0
 	gopkg.in/yaml.v2 v2.4.0
 )
 
@@ -45,6 +45,6 @@ require (
 	go.yaml.in/yaml/v4 v4.0.0-rc.2 // indirect
 	golang.org/x/crypto v0.52.0 // indirect
 	golang.org/x/net v0.55.0 // indirect
-	golang.org/x/sys v0.48.0 // indirect
+	golang.org/x/sys v0.50.0 // indirect
 	golang.org/x/text v0.37.0 // indirect
 )
