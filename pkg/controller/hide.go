@@ -226,7 +226,7 @@ func (c *HideController) listHiddenComments( //nolint:funlen
 	return nodeIDs, nil
 }
 
-func isExcludedComment(cmt *github.IssueComment, login string) bool {
+func isExcludedComment(cmt *github.IssueComment, _ string) bool {
 	if !cmt.ViewerCanMinimize {
 		return true
 	}
